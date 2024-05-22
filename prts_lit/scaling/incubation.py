@@ -9,7 +9,6 @@ from ..utils import (
     find_moduleList,
     make_only_trg_as_trainable
 )
-from lit_gpt.utils import get_logger
 
 
 class IncubationLayer(nn.Module):
@@ -19,7 +18,6 @@ class IncubationLayer(nn.Module):
         trg_layers: Union[nn.ModuleList, nn.Linear, nn.Embedding],
         layer_idx: int,
         global_W: Optional[nn.Parameter] = None,
-        use_fused: bool = False,
         activate_g_op: bool = False,
         activate_f_op: bool = False,
     ) -> None:
@@ -31,7 +29,7 @@ class IncubationLayer(nn.Module):
         self.use_fused = use_fused
         self.activate_g_op = activate_g_op
         self.activate_f_op = activate_f_op
-        self.logger = get_logger()
+        # self.logger = get_logger()
 
     def g(self, input_hidden: torch.tensor):
         if self.global_W is not None and self.activate_g_op:
@@ -51,42 +49,10 @@ class IncubationLayer(nn.Module):
         *args,
         **kwargs
         ) -> Tuple[torch.Tensor, any]:
-        if self.use_fused:
-            meta_x = x
-            trg_x = self.g(x)
-            for meta_block in self.meta_layers:
-                meta_x, *_ = meta_block(meta_x, *args, **kwargs)
-            for trg_block in self.trg_layers:
-                trg_x, *_ = trg_block(trg_x, *args, **kwargs)
-            trg_x = self.f(trg_x)
-            norm_meta = torch.norm(meta_x, dim=-1)
-            norm_trg = torch.norm(trg_x, dim=-1)
-            product = torch.einsum('ijk,ijk->ij', meta_x, trg_x)
-            cosine_distance = (product / norm_meta / norm_trg).unsqueeze(-1)
-            self.logger.log_metrics({"cosine_distance": torch.mean(cosine_distance)})
-            # x = cosine_distance * meta_x + (1 - cosine_distance) * trg_x
-            x = trg_x
-            return x, None
-        else:
-            x = self.g(x)
-            for block in self.trg_layers:
-                x, *_ = block(x, *args, **kwargs)
-            return self.f(x), None
-
-    def fused_compute(
-        self,
-        x:torch.Tensor,
-        *args,
-        **kwargs
-        ):
-        meta_x = self.meta_layers(x, *args, **kwargs)
-        trg_x = self.f(self.trg_layers(self.g(x), *args, **kwargs))
-        norm_meta = torch.norm(meta_x, dim=-1)
-        norm_trg = torch.norm(trg_x, dim=-1)
-        product = torch.einsum('ijk,ijk->ij', meta_x, trg_x)
-        cosine_distance = (product / norm_meta / norm_trg).unsqueeze(-1)
-        self.logger.log_metrics({"cosine_distance": torch.mean(cosine_distance)})
-        return cosine_distance * meta_x + (1 - cosine_distance) * trg_x
+        x = self.g(x)
+        for block in self.trg_layers:
+            x, *_ = block(x, *args, **kwargs)
+        return self.f(x), None
         
     def forward(
         self,
@@ -96,8 +62,6 @@ class IncubationLayer(nn.Module):
         ) -> Tuple[torch.Tensor, any]:
         if isinstance(self.trg_layers, nn.ModuleList):
             return self.decoder_layers(x, *args, **kwargs)
-        elif self.use_fused:
-            return self.fused_compute(x, *args, **kwargs)
         else:
             return self.f(self.trg_layers(self.g(x), *args, **kwargs))
 

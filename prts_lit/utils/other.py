@@ -1,14 +1,38 @@
+import math
 from typing import Optional
 import torch
 import torch.nn as nn
 
+
+class MaskSchedule:
+    def __init__(self, start_steps=0, end_steps=40000):
+        self.start_steps = start_steps
+        self.end_steps = end_steps
+        self.current_step = 0
+
+    def step(self):
+        self.current_step += 1
+
+    # def get_mask(self):
+    #     if self.current_step >= self.total_steps:
+    #         return 1.0
+    #     else:
+    #         return self.current_step / self.total_steps
+
+    def get_mask(self):
+        if self.current_step <= self.start_steps:
+            return 0
+        elif self.current_step >= self.end_steps:
+            return 1.0
+        else:
+            return math.sin(math.pi / 2 * (self.current_step - self.start_steps) / (self.end_steps - self.start_steps))
 
 def expand_tensor(
     tensor: torch.Tensor,  # the tensor needing expansion (a, b)
     trg_shape: torch.Size,  
     extra_src_indices: Optional[torch.Tensor],
     div=True,
-    device='cuda:0' 
+    device='cuda:0'
 ):
     if extra_src_indices is None:
         return tensor
@@ -28,9 +52,7 @@ def expand_tensor(
     extra_src_tensor = extra_src_tensor.to(device)
     extra_src_indices = extra_src_indices.to(device)
 
-    # rand初始化一个new_tensor
     new_tensor = torch.randn(trg_shape, dtype=tensor.dtype, device=device)
-    # 赋值原来的部分
     new_tensor.narrow(dim, 0, tensor.size(dim)).copy_(tensor)
     padding_tensor = extra_src_tensor.index_select(dim, extra_src_indices)
 
@@ -47,9 +69,8 @@ def expand_tensor(
             # print(tensor.index_select(dim, extra_src_indices)==padding_tensor)
             padding_tensor = padding_tensor / repeat_count
         else:
-            repeat_count = repeat_count + 1 # +的这个1是复制的那一份
+            repeat_count = repeat_count + 1
             padding_tensor = padding_tensor / repeat_count
-            # 原来的参数位置也需要除以repeat_count
             new_tensor.index_copy_(dim, extra_src_indices, padding_tensor)
     # print(new_tensor.shape)
     # print(padding_tensor.shape)
@@ -123,10 +144,15 @@ def find_moduleList(model):
             return parent, layer, layer_name
 
 
-def make_only_trg_as_trainable(model: nn.Module):
+def make_only_trg_as_trainable(model: nn.Module, special_modules_mapping):
     for n, p in model.named_parameters():
-        if "trg_layers" not in n and "global_W" not in n:
-            p.requires_grad = False
+        if "trg_layers" not in n:
+            is_special = False
+            for key in special_modules_mapping.keys():
+                if key in n:
+                    is_special = True
+            if not is_special:
+                p.requires_grad = False
 
 
 def make_only_before_n_layer_trg_as_trainable(
@@ -158,7 +184,6 @@ def make_only_before_n_layer_trg_as_trainable(
 def switch_key(key: str, block_layers: int, block_idx: Optional[int] = None) -> str:
     key = key.replace("meta_model.", "")
     keys = key.split(".")
-    # 查找 "trg_layers" 在列表中的索引
     index_trg_layers = keys.index("trg_layers")
 
     if index_trg_layers < len(keys) - 1:
@@ -170,3 +195,7 @@ def switch_key(key: str, block_layers: int, block_idx: Optional[int] = None) -> 
         keys[index_trg_layers - 1] = str(int(keys[index_trg_layers - 1]) + block_idx * block_layers)
     print(keys)
     return ".".join(keys)
+
+
+def get_partition(name: str) -> str:
+    return '.' + name + '.'
