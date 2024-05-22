@@ -29,8 +29,9 @@ We further address *O3* by formalizing equational guidelines for $G_{\text{stack
 We also provide comprehensive ablation studies of $G_{\text{stack}}$ and in-depth discussions.
 
 ## Growth Operators
-![Image text](https://github.com/Kuroxiro/prts/blob/main/op.png)
-
+<p align="center">
+  <img src="https://github.com/Kuroxiro/prts/blob/main/op.png" alt="Image text">
+</p>
 
 ## Getting Started
 ```
