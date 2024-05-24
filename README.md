@@ -68,14 +68,28 @@ For Llama Families:
 | Llama2-13B | 13B  | 2T   | 15.84B | 4     |
 | Llama2-70B | 70B  | 2T   | 42.48B | 4     |
 
-#### Pretraining a Small Base Model From Scratch
-
+#### Pretraining a Small Base Model with $d$ Tokens From Scratch
+We only need the first checkpoint (10B tokens).
 ```
-
+sbatch base_model.sh
 ```
 
 #### Create PRTS Config
+For example, in the case of $G_{\text{stack}}$, please refer to [prts_lit/utils/config.py](prts_lit/utils/config.py) for more details.
 ```
+{
+    "src_config_name": "6L2048H",
+    "trg_config_name": "24L2048H",
+    "src_init_path": "/path/to/your/base_model/check_point_dir/iter-005000-ckpt.pth",
+    "stacking_list": [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5],
+    "embd_name": "wte",
+    "ln_name": "ln_f",
+    "head_name": "lm_head",
+    "layer_name": "h"
+}
 ```
 
 #### Start Continual Pretraining
+```
+sbatch g_stack.sh
+```

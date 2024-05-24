@@ -1,0 +1,10 @@
+{
+    "src_config_name": "6L2048H",
+    "trg_config_name": "24L2048H",
+    "src_init_path": "/path/to/your/base_model/check_point_dir/iter-005000-ckpt.pth",
+    "stacking_list": [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5],
+    "embd_name": "wte",
+    "ln_name": "ln_f",
+    "head_name": "lm_head",
+    "layer_name": "h"
+}
