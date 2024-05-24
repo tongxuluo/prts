@@ -5,7 +5,7 @@ official implementation for paper **Stacking Your Transformers: A Closer Look at
 
 <p align="center">
 <a href="https://github.com/Kuroxiro/prts/blob/main/LICENSE">
-<img src='https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg'></a>
+<img src='https://img.shields.io/badge/Code%20License-Apache_2.0-green.svg'></a>
 <img src='https://img.shields.io/badge/python-3.10+-blue.svg'>
 <!-- <img src='https://img.shields.io/badge/Data%20License-CC%20By%20NC%204.0-red.svg'> -->
 </p>
@@ -96,6 +96,16 @@ sbatch g_stack.sh
 
 ## Acknowledgement
 Our code is based on [TinyLlama](https://github.com/jzhang38/TinyLlama), licensed under the Apache-2.0 license.
+```
+@misc{zhang2024tinyllama,
+      title={TinyLlama: An Open-Source Small Language Model}, 
+      author={Peiyuan Zhang and Guangtao Zeng and Tianduo Wang and Wei Lu},
+      year={2024},
+      eprint={2401.02385},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
 
 ## Citation
 If you find our paper inspiring and have utilized it in your work, please cite our paper.
