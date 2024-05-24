@@ -38,3 +38,44 @@ We also provide comprehensive ablation studies of $G_{\text{stack}}$ and in-dept
 git clone https://github.com/Kuroxiro/prts.git
 cd prts
 ```
+
+### Data Preparation
+#### Download Datasets
+```
+cd /path/to/dataset
+git lfs install
+git clone https://huggingface.co/datasets/cerebras/SlimPajama-627B
+```
+
+#### Tokenize data
+```
+python scripts/prepare_slimpajama.py --source_path /path/to/SlimPajama --tokenizer_path data/llama  --destination_path data/slim_star_combined --split validation --percentage 1.0
+python scripts/prepare_slimpajama.py --source_path /path/to/SlimPajama --tokenizer_path data/llama  --destination_path data/slim_star_combined --split train --percentage 1.0
+```
+
+### Pretraining on Slurm Cluster
+We formalize a set of guidelines for effectively utilizing the $G_{\text{stack}}$ operator. For growth timing $d$ (tokens):
+$$log_{10}(d) = 0.88\log_{10}(N) + \frac{163.27}{\log_{10}(C)} + -5.74$$
+
+For growth factor $g$, we fix $g=4$ is the best.
+
+For Llama Families:
+
+| Model      | N    | D    | ${d}$  | ${g}$ |
+|------------|------|------|--------|-------|
+| Llama3-8B  | 8B   | 15T  | 6.58B  | 4     |
+| Llama2-7B  | 7B   | 2T   | 11.11B | 4     |
+| Llama2-13B | 13B  | 2T   | 15.84B | 4     |
+| Llama2-70B | 70B  | 2T   | 42.48B | 4     |
+
+#### Pretraining a Small Base Model From Scratch
+
+```
+
+```
+
+#### Create PRTS Config
+```
+```
+
+#### Start Continual Pretraining
