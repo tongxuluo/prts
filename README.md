@@ -75,7 +75,7 @@ sbatch base_model.sh
 ```
 
 #### Create PRTS Config
-For example, in the case of $G_{\text{stack}}$, please refer to [prts_lit/utils/config.py](https://github.com/github/codeql/blob/main/prts_lit/utils/config.py) for more details.
+For example, in the case of $G_{\text{stack}}$, please refer to [prts_lit/utils/config.py](https://github.com/github/prts/blob/main/prts_lit/utils/config.py) for more details.
 ```
 {
     "src_config_name": "6L2048H",
