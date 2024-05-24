@@ -1,6 +1,6 @@
 # PRTS: PRe-Training by Stacking
 
-official implementation for paper **Stacking Your Transformers: An Empirical Study of Model Growth for Efficient LLMs Pre-Training** 
+official implementation for paper **Stacking Your Transformers: A Closer Look at Model Growth for Efficient LLM Pre-Training** 
 
 
 <p align="center">
@@ -11,7 +11,7 @@ official implementation for paper **Stacking Your Transformers: An Empirical Stu
 </p>
 
 <p align="center">
-🔔 <a href="https://github.com/Kuroxiro/prts" target="_blank">Code</a> • 📃 <a href="https://github.com/Kuroxiro/prts" target="_blank">Paper</a> • 🤗 <a href="https://huggingface.co/datasets/cerebras/SlimPajama-627B" target="_blank">Dataset</a> <br>
+🔔 <a href="https://github.com/tongxuluo/prts" target="_blank">Code</a> • 📃 <a href="https://github.com/tongxuluo/prts" target="_blank">Paper</a> • 🤗 <a href="https://huggingface.co/datasets/cerebras/SlimPajama-627B" target="_blank">Dataset</a> <br>
 </p>
 
 
