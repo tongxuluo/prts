@@ -5,7 +5,7 @@ official implementation for paper **Stacking Your Transformers: A Closer Look at
 
 <p align="center">
 <a href="https://github.com/Kuroxiro/prts/blob/main/LICENSE">
-<img src='http://creativecommons.org/licenses/by/4.0/'></a>
+<img src='https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg'></a>
 <img src='https://img.shields.io/badge/python-3.10+-blue.svg'>
 <img src='https://img.shields.io/badge/Data%20License-CC%20By%20NC%204.0-red.svg'>
 </p>
