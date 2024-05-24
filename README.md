@@ -93,3 +93,17 @@ For example, in the case of $G_{\text{stack}}$, please refer to [prts_lit/utils/
 ```
 sbatch g_stack.sh
 ```
+
+## Acknowledgement
+Our code is based on [TinyLlama](https://github.com/jzhang38/TinyLlama), licensed under the Apache-2.0 license.
+
+## Citation
+If you find our paper inspiring and have utilized it in your work, please cite our paper.
+```
+@article{du2024stacking,
+  title={Stacking Your Transformers: A Closer Look at Model Growth for Efficient LLM Pre-Training},
+  author={Du, Wenyu and Luo, Tongxu and Qiu, Zihan and Huang, Zeyu and Shen, Yikang and Cheng, Reynold and Guo, Yike and Fu, Jie},
+  journal={arXiv preprint},
+  year={2024}
+}
+```
