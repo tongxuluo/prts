@@ -19,7 +19,7 @@ SCRIPT_DIR=/aifs4su/data/tongxuluo/PRTS
 MODEL_NAME=24L2048H
 METHOD=stacking
 CONFIG="./prts_configs/stacking_6L_24L.json"
-export WANDB_API_KEY=1097fdf04de2e945cb795b86d6b2a52820e988d9
+export WANDB_API_KEY=Your WANDB_API_KEY
 
 source /home/tongxuluo/env/anaconda3/bin/activate
 conda activate tinyllama
