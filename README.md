@@ -7,11 +7,11 @@ official implementation for paper **Stacking Your Transformers: A Closer Look at
 <a href="https://github.com/Kuroxiro/prts/blob/main/LICENSE">
 <img src='https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg'></a>
 <img src='https://img.shields.io/badge/python-3.10+-blue.svg'>
-<img src='https://img.shields.io/badge/Data%20License-CC%20By%20NC%204.0-red.svg'>
+<!-- <img src='https://img.shields.io/badge/Data%20License-CC%20By%20NC%204.0-red.svg'> -->
 </p>
 
 <p align="center">
-🔔 <a href="https://github.com/tongxuluo/prts" target="_blank">Code</a> • 📃 <a href="https://github.com/tongxuluo/prts" target="_blank">Paper</a> • 🤗 <a href="https://huggingface.co/datasets/cerebras/SlimPajama-627B" target="_blank">Dataset</a> <br>
+🔔 <a href="https://github.com/tongxuluo/prts" target="_blank">Code</a> • 📃 <a href="https://github.com/tongxuluo/prts" target="_blank">Paper</a> • 🤗 <a href="https://huggingface.co/datasets/cerebras/SlimPajama-627B" target="_blank">Model</a> <br>
 </p>
 
 
