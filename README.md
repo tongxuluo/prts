@@ -11,7 +11,7 @@ official implementation for paper **Stacking Your Transformers: A Closer Look at
 </p>
 
 <p align="center">
-🔔 <a href="https://github.com/tongxuluo/prts" target="_blank">Code</a> • 📃 <a href="https://github.com/tongxuluo/prts" target="_blank">Paper</a> • 🤗 <a href="https://huggingface.co/datasets/cerebras/SlimPajama-627B" target="_blank">Model</a> <br>
+🔔 <a href="https://github.com/tongxuluo/prts" target="_blank">Code</a> • 📃 <a href="https://github.com/tongxuluo/prts" target="_blank">Paper</a> • 🤗 <a href="https://huggingface.co/llm-stacking" target="_blank">Model</a> <br>
 </p>
 
 
