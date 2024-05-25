@@ -96,9 +96,9 @@ sbatch g_stack.sh
 
 ## TODO
 - [x] Open source our code.
-- [ ] Open source our last checkpoints of main experiments.
-- [ ] Open source our last checkpoints of Ablations.
-- [ ] Refactor our code to make it more concise.
+- [ ] Open source our last checkpoints of main experiments -- 2024.5.29 .
+- [ ] Open source our last checkpoints of Ablations -- 2024.6.1 .
+- [ ] Refactor our code to make it more concise -- 2024.7 .
 
 
 ## Acknowledgement
