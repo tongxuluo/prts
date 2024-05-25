@@ -4,7 +4,7 @@ official implementation for paper **Stacking Your Transformers: A Closer Look at
 
 
 <p align="center">
-<a href="https://github.com/Kuroxiro/prts/blob/main/LICENSE">
+<a href="https://github.com/tongxuluo/prts/blob/main/LICENSE">
 <img src='https://img.shields.io/badge/Code%20License-Apache_2.0-green.svg'></a>
 <img src='https://img.shields.io/badge/python-3.10+-blue.svg'>
 <!-- <img src='https://img.shields.io/badge/Data%20License-CC%20By%20NC%204.0-red.svg'> -->
@@ -30,12 +30,12 @@ We also provide comprehensive ablation studies of $G_{\text{stack}}$ and in-dept
 
 ## Growth Operators
 <p align="center">
-  <img src="https://github.com/Kuroxiro/prts/blob/main/op.png" alt="Image text">
+  <img src="https://github.com/tongxuluo/prts/blob/main/op.png" alt="Image text">
 </p>
 
 ## Getting Started
 ```
-git clone https://github.com/Kuroxiro/prts.git
+git clone https://github.com/tongxuluo/prts.git
 cd prts
 ```
 
@@ -93,6 +93,13 @@ For example, in the case of $G_{\text{stack}}$, please refer to [prts_lit/utils/
 ```
 sbatch g_stack.sh
 ```
+
+## TODO
+- [x] Open source our code.
+- [ ] Open source our last checkpoints of main experiments.
+- [ ] Open source our intermediate checkpoints.
+- [ ] Refactor our code to make it more concise.
+
 
 ## Acknowledgement
 Our code is based on [TinyLlama](https://github.com/jzhang38/TinyLlama), licensed under the Apache-2.0 license.
