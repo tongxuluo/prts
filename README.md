@@ -1,6 +1,6 @@
-# PRTS: PRe-Training by Stacking
+# PRTS: PRe-Training by Stacking (LLM-Stacking)
 
-official implementation for paper **Stacking Your Transformers: A Closer Look at Model Growth for Efficient LLM Pre-Training** 
+The official implementation for paper **Stacking Your Transformers: A Closer Look at Model Growth for Efficient LLM Pre-Training** 
 
 
 <p align="center">
