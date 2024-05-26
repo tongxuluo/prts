@@ -1,3 +1,7 @@
+<div align="center">
+    <img src="https://github.com/tongxuluo/prts/blob/main/stacking_poster.png" width="448" height="448">
+</div>
+
 # PRTS: PRe-Training by Stacking (LLM-Stacking)
 
 The official implementation for paper **Stacking Your Transformers: A Closer Look at Model Growth for Efficient LLM Pre-Training** 
