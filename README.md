@@ -107,23 +107,23 @@ sbatch g_stack.sh
 ## Acknowledgement
 Our code is based on [TinyLlama](https://github.com/jzhang38/TinyLlama), licensed under the Apache-2.0 license.
 ```
-@article{du2024stacking,
-  title={Stacking Your Transformers: A Closer Look at Model Growth for Efficient LLM Pre-Training},
-  author={Du, Wenyu and Luo, Tongxu and Qiu, Zihan and Huang, Zeyu and Shen, Yikang and Cheng, Reynold and Guo, Yike and Fu, Jie},
-  journal={arXiv preprint arXiv:2405.15319},
-  year={2024}
+@misc{zhang2024tinyllama,
+      title={TinyLlama: An Open-Source Small Language Model}, 
+      author={Peiyuan Zhang and Guangtao Zeng and Tianduo Wang and Wei Lu},
+      year={2024},
+      eprint={2401.02385},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
 }
 ```
 
 ## Citation
 If you find our paper inspiring and have utilized it in your work, please cite our paper.
 ```
-@misc{du2024stacking,
-      title={Stacking Your Transformers: A Closer Look at Model Growth for Efficient LLM Pre-Training}, 
-      author={Wenyu Du and Tongxu Luo and Zihan Qiu and Zeyu Huang and Yikang Shen and Reynold Cheng and Yike Guo and Jie Fu},
-      year={2024},
-      eprint={2405.15319},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@article{du2024stacking,
+  title={Stacking Your Transformers: A Closer Look at Model Growth for Efficient LLM Pre-Training},
+  author={Du, Wenyu and Luo, Tongxu and Qiu, Zihan and Huang, Zeyu and Shen, Yikang and Cheng, Reynold and Guo, Yike and Fu, Jie},
+  journal={arXiv preprint arXiv:2405.15319},
+  year={2024}
 }
 ```
