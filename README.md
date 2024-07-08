@@ -40,6 +40,28 @@ We also provide comprehensive ablation studies of $G_{\text{stack}}$ and in-dept
 ### Illustrations
 ![Illustration of the $G_{\text{stack}}$ operator](gif/g_stack.gif)
 
+<div style="display: flex; flex-wrap: wrap;">
+  <div style="flex: 1; text-align: center;">
+    <img src="gif/g_stack.gif" alt="Stack GIF" style="width: 100%; max-width: 300px; height: auto;>
+    <p class="caption">Illustration of the $G_{\text{stack}}$ operator</p>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="gif/g_split.gif" alt="Split GIF" style="width: 100%; max-width: 300px; height: auto;>
+    <p class="caption">Illustration of the $G_{\text{split}}$ operator</p>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="gif/g_learn.gif" alt="Learn GIF" style="width: 100%; max-width: 300px; height: auto;>
+    <p class="caption">Illustration of the $G_{\text{learn}}$ operator</p>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="gif/g_zero.gif" alt="Zero GIF" style="width: 100%; max-width: 300px; height: auto;>
+    <p class="caption">Illustration of the $G_{\text{zero}}$ operator</p>
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <img src="gif/g_mask.gif" alt="Mask GIF" style="width: 100%; max-width: 300px; height: auto;>
+    <p class="caption">Illustration of the $G_{\text{random}}$ operator</p>
+  </div>
+</div>
 
 ## Getting Started
 ```
