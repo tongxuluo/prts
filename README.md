@@ -38,9 +38,17 @@ We also provide comprehensive ablation studies of $G_{\text{stack}}$ and in-dept
 </p>
 
 ### Illustrations
-![Illustration of the $G_{\text{stack}}$ operator](gif/g_stack.gif)
+#### Illustration of the $G_{\text{stack}}$ operator
+<img src="gif/g_stack.gif" width="auto" height="400">
 
-<img src="gif/g_stack.gif" width="200" height="auto">
+#### Illustration of the $G_{\text{split}}$ operator
+<img src="gif/g_split.gif" width="auto" height="400">
+#### Illustration of the $G_{\text{learn}}$ operator
+<img src="gif/g_learn.gif" width="auto" height="400">
+#### Illustration of the $G_{\text{zero}}$ operator
+<img src="gif/g_zero.gif" width="auto" height="400">
+#### Illustration of the $G_{\text{random}}$ operator
+<img src="gif/g_mask.gif" width="auto" height="400">
 
 ## Getting Started
 ```
