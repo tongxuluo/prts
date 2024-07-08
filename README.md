@@ -63,6 +63,15 @@ We also provide comprehensive ablation studies of $G_{\text{stack}}$ and in-dept
   </div>
 </div>
 
+<style>
+  .caption {
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+    color: #888;
+  }
+</style>
+
 ## Getting Started
 ```
 git clone https://github.com/tongxuluo/prts.git
