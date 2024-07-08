@@ -37,6 +37,10 @@ We also provide comprehensive ablation studies of $G_{\text{stack}}$ and in-dept
   <img src="https://github.com/tongxuluo/prts/blob/main/op.png" alt="Image text">
 </p>
 
+### Illustrations
+![Illustration of the $G_{\text{stack}}$ operator](gif/g_stack.gif)
+
+
 ## Getting Started
 ```
 git clone https://github.com/tongxuluo/prts.git
