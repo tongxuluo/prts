@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://github.com/tongxuluo/prts/blob/main/stacking_poster.png" width="256" height="256">
+    <img src="https://github.com/tongxuluo/prts/blob/main/stacking.png" width="256" height="256">
 </div>
 
 # PRTS: PRe-Training by Stacking (LLM-Stacking)
