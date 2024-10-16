@@ -117,7 +117,7 @@ sbatch g_stack.sh
 ## TODO
 - [x] Open source our code -- 2024.5.24 .
 - [x] Open source our last checkpoints of main experiments -- 2024.5.29 .
-- [ ] Refactor our code to make it more concise -- 2024.7 .
+<!-- - [ ] Refactor our code to make it more concise -- 2024.7 . -->
 
 
 ## Acknowledgement
